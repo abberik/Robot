@@ -1,0 +1,16 @@
+package natverkssaker;
+
+import java.io.Serializable;
+
+public class Message implements Serializable{
+
+	private int[] content;
+	
+	public Message(int... args) { //sometimes the msg will contain several instructions, sometimes not. 
+	
+			content = args;	//potential error if the varargs would result in a int instead of a int[]
+	}
+	
+	
+	
+}
