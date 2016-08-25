@@ -42,7 +42,15 @@ public class Host implements Runnable {
 			
 			while(!disconnected){
 				
-				
+				try{
+					
+					
+					
+				}catch(Exception ex){
+					//an exeption could be generated when parsing the packet
+					//(since TCP is used this should not be a problem
+					ex.printStackTrace();
+				}
 				
 			}
 			
