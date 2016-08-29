@@ -1,0 +1,9 @@
+INDEX VERSION 1.129+/home/gryning/Dokument/kod/Robot/.metadata/.plugins/org.eclipse.jdt.core
+2454942522.index
+397450292.index
+4075685054.index
+1224805717.index
+2764870718.index
+1218111336.index
+971027622.index
+1572059527.index
