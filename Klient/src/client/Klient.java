@@ -7,8 +7,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JToolBar;
 
+import handelser.Anslut;
 import handelser.OppnaKonsol;
 import handelser.OppnaKontroller;
+import natverkssaker.Anslutning;
 
 public class Klient extends JFrame{
 
@@ -27,6 +29,10 @@ public class Klient extends JFrame{
 	private JMenuItem open_console_menu_item; 
 	private JMenuItem open_controls_menu_item;
 
+	private Anslutning anslutning;
+	private Anslut anslut;
+	private JMenuItem anslut_menu_item;
+	
 	public Klient() {
 		
 		oppna_konsol = new OppnaKonsol();
@@ -44,7 +50,10 @@ public class Klient extends JFrame{
 		this.open_menu.setVisible(true);
 		this.menu_bar = new JMenuBar();
 		
-
+		anslut = new Anslut(this);
+		anslut_menu_item = new JMenuItem("Connect to pi.");
+		anslut_menu_item.addActionListener(anslut);
+		anslut_menu_item.setMnemonic('c');
 		open_console_menu_item = new JMenuItem("Open developer console.");
 		open_console_menu_item.addActionListener(oppna_konsol);
 		open_console_menu_item.setMnemonic('s');
@@ -57,6 +66,10 @@ public class Klient extends JFrame{
 		open_menu.setMnemonic('o');
 		
 		menu_bar.add(open_menu);
+		
+		client_menu.setMnemonic('c');
+		client_menu.add(anslut_menu_item);
+		
 		menu_bar.add(client_menu);
 		this.add(menu_bar,BorderLayout.NORTH);
 
@@ -64,5 +77,79 @@ public class Klient extends JFrame{
 		this.setVisible(true);
 		
 	}
+
+	public JToolBar getToolbar() {
+		return toolbar;
+	}
+
+	public void setToolbar(JToolBar toolbar) {
+		this.toolbar = toolbar;
+	}
+
+	public JMenu getOpen_menu() {
+		return open_menu;
+	}
+
+	public void setOpen_menu(JMenu open_menu) {
+		this.open_menu = open_menu;
+	}
+
+	public JMenuBar getMenu_bar() {
+		return menu_bar;
+	}
+
+	public void setMenu_bar(JMenuBar menu_bar) {
+		this.menu_bar = menu_bar;
+	}
+
+	public JMenu getClient_menu() {
+		return client_menu;
+	}
+
+	public void setClient_menu(JMenu client_menu) {
+		this.client_menu = client_menu;
+	}
+
+	public OppnaKonsol getOppna_konsol() {
+		return oppna_konsol;
+	}
+
+	public void setOppna_konsol(OppnaKonsol oppna_konsol) {
+		this.oppna_konsol = oppna_konsol;
+	}
+
+	public OppnaKontroller getOppna_kontroller() {
+		return oppna_kontroller;
+	}
+
+	public void setOppna_kontroller(OppnaKontroller oppna_kontroller) {
+		this.oppna_kontroller = oppna_kontroller;
+	}
+
+	public JMenuItem getOpen_console_menu_item() {
+		return open_console_menu_item;
+	}
+
+	public void setOpen_console_menu_item(JMenuItem open_console_menu_item) {
+		this.open_console_menu_item = open_console_menu_item;
+	}
+
+	public JMenuItem getOpen_controls_menu_item() {
+		return open_controls_menu_item;
+	}
+
+	public void setOpen_controls_menu_item(JMenuItem open_controls_menu_item) {
+		this.open_controls_menu_item = open_controls_menu_item;
+	}
+
+	public Anslutning getAnslutning() {
+		return anslutning;
+	}
+
+	public void setAnslutning(Anslutning anslutning) {
+		this.anslutning = anslutning;
+	}
+	
+	
 	
 }

@@ -47,7 +47,7 @@ public class Host implements Runnable {
 					Object object = inputStream.readObject();
 					Message message = (Message) object; //BAM där har du det.
 					//Lägg till nödvändiga anrop.
-					
+					System.out.println("Msg recieved: " + message.toString() );
 					
 				}catch(Exception ex){
 					

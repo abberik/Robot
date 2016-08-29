@@ -11,6 +11,12 @@ public class Message implements Serializable{
 			content = args;	//potential error if the varargs would result in a int instead of a int[]
 	}
 	
-	
+	public String toString(){
+		String string = "";
+		
+		for(int i = 0; i < content.length; i++) string += content[i] + ",";
+		
+		return string;
+	}
 	
 }

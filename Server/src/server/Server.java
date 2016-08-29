@@ -12,6 +12,11 @@ public class Server {
 	private Host host;
 	private Thread host_thread;
 	
+	public static void main(String[] args) {
+		System.out.println("Starting server.");
+		new Server();
+	}
+	
 	public Server() {
 	
 		try {
