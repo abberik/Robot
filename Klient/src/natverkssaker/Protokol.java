@@ -18,62 +18,78 @@ public class Protokol {
 	public Protokol(String protocol_location) {
 	
 		//las protokol
-		parse_protocol();
 		this.protocol_location = protocol_location;
+		parse_protocol();
+		
 		
 	}
 
 	private void parse_protocol() {
-		
+		int n = 0;
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(protocol_location));
-			
+			System.out.println(n++);
 			while(true){
 				
-				char[] chars = br.readLine().toCharArray();
+				char[] chars = null;
 				
-				String from_brackets = "";
-				short value = -1;
+				try{
+					chars = br.readLine().toCharArray();
+				}catch(NullPointerException ex){
+					break;
+				}
 				
-				boolean in_content = false;
-		
 				
-				for(int i = 0; i < chars.length; i++){	//cut out the content
+				if(chars[0] != '#'){	//om raden inte är en kommentar
 					
-					//add the content to the string
-					if(in_content) from_brackets+=chars[i];					
+					String from_brackets = "";
+					short value = -1;
 					
-					//Keep track of the content
-					if(chars[i] == '{') in_content = true;				
-					if(chars[i] == '}') in_content = false;
+					boolean in_content = false;
+			
+					
+					for(int i = 0; i < chars.length; i++){	//cut out the content
+						
+					
+						
+						//Keep track of the content
+						if(chars[i] == '{') in_content = true;				
+						if(chars[i] == '}') in_content = false;
+						
+						//add the content to the string
+						if(in_content) from_brackets+=chars[i];				
+						
+					}
+				
+					String[] inData = from_brackets.split(",");
+					String name = "";
+					
+					in_content = false;
+					
+					chars = inData[0].toCharArray();
+					
+					for(int i = 0; i < chars.length; i++){	//cut out the content
+						
+						//add the content to the string
+						if(in_content) name+=chars[i];					
+						
+						//Keep track of the content
+						if(chars[i] == '"') in_content = true;				
+						if(chars[i] == '"' && in_content) in_content = false;
+						
+					}
+					System.out.println(inData[1]);
+					value = Short.parseShort(inData[1]);
+					
+					if(name.equals("TOGGLE_FORWARD")) forward = value;
+					if(name.equals("TOGGLE_BACKWARD")) backward = value;
+					if(name.equals("TOGGLE_LEFT")) left = value;
+					if(name.equals("TOGGLE_RIGHT")) right = value;
+					if(name.equals("GOODBYE")) disconnect = value;
 					
 				}
 				
-				String[] inData = from_brackets.split(",");
-				String name = "";
 				
-				in_content = false;
-				
-				chars = inData[0].toCharArray();
-				
-				for(int i = 0; i < chars.length; i++){	//cut out the content
-					
-					//add the content to the string
-					if(in_content) name+=chars[i];					
-					
-					//Keep track of the content
-					if(chars[i] == '"') in_content = true;				
-					if(chars[i] == '"' && in_content) in_content = false;
-					
-				}
-				
-				value = Short.parseShort(inData[1]);
-				
-				if(name.equals("TOGGLE_FORWARD")) forward = value;
-				if(name.equals("TOGGLE_BACKWARD")) backward = value;
-				if(name.equals("TOGGLE_LEFT")) left = value;
-				if(name.equals("TOGGLE_RIGHT")) right = value;
-				if(name.equals("GOODBYE")) disconnect = value;
 				
 			}
 			

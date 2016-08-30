@@ -1,6 +1,8 @@
 package client;
 import java.awt.BorderLayout;
 import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -16,12 +18,7 @@ import natverkssaker.Anslutning;
 public class Klient extends JFrame{
 
 	public static void main(String[] args) {
-		
-		BufferedWriter bw = new BufferedWriter(new FileWritrer("res/file.txt"));
-		
-		
-		
-		//new Klient();
+		new Klient();
 	}
 	
 	private JToolBar toolbar;

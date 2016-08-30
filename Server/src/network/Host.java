@@ -29,7 +29,7 @@ public class Host implements Runnable {
 			try {
 				
 				socket = serv_socket.accept();
-				
+				System.out.println("User connected");
 				inputStream = new ObjectInputStream(socket.getInputStream());
 				outputStream = new ObjectOutputStream(socket.getOutputStream());
 				
