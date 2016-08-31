@@ -3,7 +3,7 @@ package server;
 import java.io.IOException;
 import java.net.ServerSocket;
 
-import network.Host;
+import natverkssaker.Host;
 
 public class Server {
 
@@ -24,6 +24,7 @@ public class Server {
 			host = new Host(server_socket);
 			host_thread = new Thread(host);
 			host_thread.start();
+			System.out.println("waiting");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -4,26 +4,25 @@ import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 
 import javax.swing.Action;
-import javax.swing.JOptionPane;
 
+import client.Klient;
 import client.Konsol;
 
 public class OppnaKonsol implements Action{
 	
 	private Konsol konsol;
 	
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+	public OppnaKonsol(Klient klient) {
 		Runnable runnable = new Runnable(){
 
 			@Override
 			public void run() {
-				if(konsol == null) konsol = new Konsol();
-				else{
-					konsol.toFront();
-					JOptionPane.showMessageDialog(konsol, "You already have a console open!");
-				}
+				
+				
+					konsol = new Konsol();
+					konsol.getFalt().setEditable(true);
+					
+				
 			}
 			
 			
@@ -32,7 +31,14 @@ public class OppnaKonsol implements Action{
 		
 		Thread console_thread = new Thread(runnable);
 		console_thread.run();
-		
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		konsol.toFront();
+		konsol.setVisible(true);	
+		konsol.getFalt().setEditable(true);
 	}
 
 	@Override
@@ -70,5 +76,15 @@ public class OppnaKonsol implements Action{
 		// TODO Auto-generated method stub
 		
 	}
+
+	public Konsol getKonsol() {
+		return konsol;
+	}
+
+	public void setKonsol(Konsol konsol) {
+		this.konsol = konsol;
+	}
+	
+	
 	
 }

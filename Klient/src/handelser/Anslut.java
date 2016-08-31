@@ -7,6 +7,7 @@ import javax.swing.Action;
 import javax.swing.JOptionPane;
 
 import client.Klient;
+import client.Konsol;
 import natverkssaker.Anslutning;
 
 public class Anslut implements  Action{
@@ -19,6 +20,8 @@ public class Anslut implements  Action{
 		
 	}
 	
+	
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
@@ -27,7 +30,14 @@ public class Anslut implements  Action{
 		String[] data = inData.split(":");
 		int port = Integer.parseInt(data[1].trim());
 		String adr = data[0];
-		Anslutning ans = new Anslutning(adr, port);
+		Anslutning anslutning = new Anslutning(adr, port);
+		
+		
+		OppnaKonsol k = klient.getOppna_konsol();
+		Konsol ko = k.getKonsol();
+		KonsolEntered kon = ko.getKonsol_entered();
+		System.out.println(anslutning.toString());
+		kon.setAnslutning(anslutning);
 		
 		
 	}

@@ -13,19 +13,16 @@ public class Controller {
 	 * 
 	 */
 	
+	private GpioPinDigitalOutput pin;
+	private boolean blink = false;
+	private boolean state = false; //false = av | true = på
+	
 	public Controller() {
-		
-		
-		GpioController gpio_controller = GpioFactory.getInstance();
-		
-		GpioPinDigitalOutput pin = gpio_controller.provisionDigitalOutputPin(RaspiPin.GPIO_01, "LED", PinState.HIGH);
-		
-		
-		
-		
-		
-		
+
 	}
+	
+
+	
 	
 	
 }

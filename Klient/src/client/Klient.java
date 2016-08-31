@@ -1,8 +1,5 @@
 package client;
 import java.awt.BorderLayout;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -11,6 +8,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JToolBar;
 
 import handelser.Anslut;
+import handelser.KonsolEntered;
 import handelser.OppnaKonsol;
 import handelser.OppnaKontroller;
 import natverkssaker.Anslutning;
@@ -36,9 +34,15 @@ public class Klient extends JFrame{
 	private Anslut anslut;
 	private JMenuItem anslut_menu_item;
 	
+	private KonsolEntered konsol_entered;
+	
 	public Klient() {
 		
-		oppna_konsol = new OppnaKonsol();
+		oppna_konsol = new OppnaKonsol(this);
+		
+		konsol_entered = new KonsolEntered(this);
+		
+		oppna_konsol.getKonsol().setKonsol_entered(konsol_entered);
 		oppna_kontroller = new OppnaKontroller();
 		
 		this.setSize(640,480);

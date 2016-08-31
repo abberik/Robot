@@ -19,16 +19,20 @@ public class Protokol {
 	
 		//las protokol
 		this.protocol_location = protocol_location;
-		parse_protocol();
-		
+//		parse_protocol(); THIS CRAP DIDN'T FUCKING WORK!!!!!!!!!!
+		forward = 1;
+		backward = 2;
+		left = 3;
+		right = 4;
+		disconnect = 5;
 		
 	}
 
 	private void parse_protocol() {
-		int n = 0;
+		
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(protocol_location));
-			System.out.println(n++);
+			
 			while(true){
 				
 				char[] chars = null;
@@ -80,12 +84,27 @@ public class Protokol {
 					}
 					System.out.println(inData[1]);
 					value = Short.parseShort(inData[1]);
-					
-					if(name.equals("TOGGLE_FORWARD")) forward = value;
-					if(name.equals("TOGGLE_BACKWARD")) backward = value;
-					if(name.equals("TOGGLE_LEFT")) left = value;
-					if(name.equals("TOGGLE_RIGHT")) right = value;
-					if(name.equals("GOODBYE")) disconnect = value;
+					System.out.println(name);
+					if(name.equals("TOGGLE_FORWARD")){
+						System.out.println("TOGGLE_FORWARD " + value);
+						forward = value;
+					}
+					if(name.equals("TOGGLE_BACKWARD")) {
+						System.out.println("TOGGLE_BACKWARD " + value);
+						backward = value;
+					}
+					if(name.equals("TOGGLE_LEFT")){
+						System.out.println("TOGGLE_LEFT " + value);
+						left = value;
+					}
+					if(name.equals("TOGGLE_RIGHT")){
+						System.out.println("TOGGLE_RIGHT " + value);
+						right = value;
+					}
+					if(name.equals("GOODBYE")) {
+						System.out.println("GOODBYE " + value);
+						disconnect = value;
+					}
 					
 				}
 				

@@ -1,20 +1,19 @@
 package client;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
 
-import javax.swing.AbstractAction;
 import javax.swing.Action;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import handelser.KonsolEntered;
+
 public class Konsol extends JFrame {
 
 	private JTextArea area;
 	private JTextField falt;
-	
+	private KonsolEntered konsol_entered;
 	private JScrollPane scrollPane;
 	
 	public Konsol() {
@@ -33,7 +32,10 @@ public class Konsol extends JFrame {
 		this.add(area,BorderLayout.CENTER);
 		this.add(falt, BorderLayout.SOUTH);
 		
-		this.setVisible(true);
+//		konsol_entered = new KonsolEntered(klient);
+	
+	
+//		this.setVisible(true);
 	}
 	
 	public void setSubmit(Action action){
@@ -63,6 +65,16 @@ public class Konsol extends JFrame {
 	public void setScrollPane(JScrollPane scrollPane) {
 		this.scrollPane = scrollPane;
 	}
+
+	public KonsolEntered getKonsol_entered() {
+		return konsol_entered;
+	}
+
+	public void setKonsol_entered(KonsolEntered konsol_entered) {
+		this.konsol_entered = konsol_entered;
+		falt.addActionListener(konsol_entered);
+	}
+	
 	
 	
 }

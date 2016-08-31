@@ -1,0 +1,11 @@
+package LED_test;
+
+public class DigitalState {
+
+	public DigitalState() {
+		
+		
+		
+	}
+	
+}

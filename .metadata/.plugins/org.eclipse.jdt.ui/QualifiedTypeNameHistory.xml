@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.pi4j.io.gpio.GpioFactory"/>
-<fullyQualifiedTypeName name="com.pi4j.io.gpio.RaspiPin"/>
-<fullyQualifiedTypeName name="com.pi4j.io.gpio.PinState"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 <fullyQualifiedTypeName name="handelser.Anslut"/>
+<fullyQualifiedTypeName name="natverkssaker.Message"/>
 <fullyQualifiedTypeName name="natverkssaker.Anslutning"/>
+<fullyQualifiedTypeName name="handelser.KonsolEntered"/>
+<fullyQualifiedTypeName name="handelser.OppnaKonsol"/>
+<fullyQualifiedTypeName name="network.Message"/>
+<fullyQualifiedTypeName name="io.Controller"/>
+<fullyQualifiedTypeName name="com.pi4j.io.gpio.GpioPinAnalogOutput"/>
+<fullyQualifiedTypeName name="com.pi4j.io.gpio.GpioFactory"/>
+<fullyQualifiedTypeName name="com.pi4j.component.light.impl.GpioDimmableLightComponent"/>
+<fullyQualifiedTypeName name="com.pi4j.io.gpio.GpioPinDigitalOutput"/>
+<fullyQualifiedTypeName name="com.pi4j.io.gpio.RaspiPin"/>
+<fullyQualifiedTypeName name="com.pi4j.io.gpio.PinState"/>
 </qualifiedTypeNameHistroy>
