@@ -9,9 +9,12 @@
 <fullyQualifiedTypeName name="network.Message"/>
 <fullyQualifiedTypeName name="io.Controller"/>
 <fullyQualifiedTypeName name="com.pi4j.io.gpio.GpioPinAnalogOutput"/>
-<fullyQualifiedTypeName name="com.pi4j.io.gpio.GpioFactory"/>
 <fullyQualifiedTypeName name="com.pi4j.component.light.impl.GpioDimmableLightComponent"/>
+<fullyQualifiedTypeName name="MotorKontroller"/>
 <fullyQualifiedTypeName name="com.pi4j.io.gpio.GpioPinDigitalOutput"/>
+<fullyQualifiedTypeName name="com.pi4j.io.gpio.GpioController"/>
 <fullyQualifiedTypeName name="com.pi4j.io.gpio.RaspiPin"/>
+<fullyQualifiedTypeName name="com.pi4j.io.gpio.GpioFactory"/>
 <fullyQualifiedTypeName name="com.pi4j.io.gpio.PinState"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

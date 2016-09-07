@@ -1,0 +1,43 @@
+import com.pi4j.io.gpio.GpioController;
+import com.pi4j.io.gpio.GpioPinDigitalOutput;
+import com.pi4j.io.gpio.PinState;
+import com.pi4j.io.gpio.RaspiPin;
+
+public class MotorKontroller {
+	
+	private GpioController controller;
+	private GpioPinDigitalOutput[] pins = {
+			controller.provisionDigitalOutputPin(RaspiPin.GPIO_02, "0", PinState.LOW),
+			controller.provisionDigitalOutputPin(RaspiPin.GPIO_03, "1", PinState.LOW),
+			controller.provisionDigitalOutputPin(RaspiPin.GPIO_04, "2", PinState.LOW),
+			controller.provisionDigitalOutputPin(RaspiPin.GPIO_05, "3", PinState.LOW)
+			
+	};
+	
+	private int[][] array = { 
+			{1,0,0,0},
+			{1,1,0,0},
+			{0,1,0,0},
+			{0,1,1,0},
+			{0,0,1,0},
+			{0,0,1,1},
+			{0,0,0,1},
+			{1,0,0,1}
+	};
+	
+	
+	public static void main(String[] args) {
+		new MotorKontroller();
+	}
+	
+	public MotorKontroller() {
+		
+		pins = {
+				controller.provisionDigitalOutputPin(RaspiPin.GPIO_02, "0", PinState.HIGH),
+				controller.provisionDigitalOutputPin(RaspiPin.GPIO_03, "1", PinState.HIGH)
+				
+		};
+		
+	}
+	
+}

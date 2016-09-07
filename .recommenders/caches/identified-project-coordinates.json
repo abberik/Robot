@@ -1,1 +1,1 @@
-[[{"location":"/usr/lib/jvm/java-8-openjdk","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"JavaSE-1.8"}},"jre:jre:1.8.0"]]
+[[{"location":"/home/abberik/Documents/Robot/MotorControl/lib/pi4j-core.jar","type":"JAR","hints":{}},"com.pi4j:pi4j-core:1.1.0"],[{"location":"/usr/lib/jvm/java-8-openjdk","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"JavaSE-1.8"}},"jre:jre:1.8.0"]]

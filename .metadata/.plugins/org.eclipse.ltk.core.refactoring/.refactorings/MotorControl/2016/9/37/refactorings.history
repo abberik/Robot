@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;i&apos; in &apos;MotorKontroller.MotorKontroller()&apos; to &apos;a&apos;&#x0A;- Original project: &apos;MotorControl&apos;&#x0A;- Original element: &apos;MotorKontroller.MotorKontroller().i&apos;&#x0A;- Renamed element: &apos;i&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;i&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{MotorKontroller.java[MotorKontroller~MotorKontroller@i!1230!1238!1234!1234!I!0!false" name="a" references="true" stamp="1473069885633" version="1.0"/>
+</session>
