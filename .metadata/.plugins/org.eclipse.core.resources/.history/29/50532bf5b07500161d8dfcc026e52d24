@@ -24,7 +24,7 @@ public class MotorKontroller {
 			forsta.high();
 			
 			try {
-				Thread.sleep(15);
+				Thread.sleep(1);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -35,7 +35,7 @@ public class MotorKontroller {
 			andra.high();
 			
 			try {
-				Thread.sleep(15);
+				Thread.sleep(1);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

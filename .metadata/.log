@@ -215,3 +215,13 @@ org.eclipse.core.internal.resources.ResourceException: File not found: /home/gry
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2016-08-29 19:40:02.419
 !MESSAGE File not found: /home/gryning/Dokument/kod/Robot/Klient/bin/natverkssaker/Message.class.
+!SESSION 2016-09-08 12:13:12.129 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-09-08 12:13:25.982
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.

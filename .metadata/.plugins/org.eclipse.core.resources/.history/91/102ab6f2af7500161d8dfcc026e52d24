@@ -1,0 +1,85 @@
+import com.pi4j.io.gpio.GpioController;
+import com.pi4j.io.gpio.GpioFactory;
+import com.pi4j.io.gpio.GpioPinDigitalOutput;
+import com.pi4j.io.gpio.PinState;
+import com.pi4j.io.gpio.RaspiPin;
+
+public class MotorKontroller {
+	
+
+	private GpioController controller = GpioFactory.getInstance();
+	private GpioPinDigitalOutput[] pins = {
+			
+			controller.provisionDigitalOutputPin(RaspiPin.GPIO_02, "0", PinState.LOW),
+			controller.provisionDigitalOutputPin(RaspiPin.GPIO_03, "1", PinState.LOW),
+			controller.provisionDigitalOutputPin(RaspiPin.GPIO_04, "2", PinState.LOW),
+			controller.provisionDigitalOutputPin(RaspiPin.GPIO_05, "3", PinState.LOW)
+			
+	};
+	
+	private int[][] sekvens = {
+			
+			{1,0,0,0},
+			{1,1,0,0},
+			{0,1,0,0},
+			{0,1,1,0},
+			{0,0,1,0},
+			{0,0,1,1},
+			{0,0,0,1},
+			{1,0,0,1}
+			
+	};
+	
+	
+	public static void main(String[] args) {
+		new MotorKontroller();
+	}
+	
+	public MotorKontroller() {
+//		
+//		Deklarera output pins
+//
+//		Deklarera arrayen
+//
+//		Deklarera en loop som genomför "switching" sekvensen
+//
+//			Deklarera en loop som loopar igenom pinsen
+//				
+//				uppdaterar varje pin till det "korrekta värdet"
+//				
+//			Sleepa tråden så att den inte börjar switcha helt okontrollerbart.
+//
+//
+		
+		for(int i = 0; i < 64; i++){
+			sekvens();
+		}
+		
+	}
+	
+	public void sekvens(){
+		for(int a = 0; a < sekvens.length; a++){
+			
+			for(int b = 0; b < pins.length; b++){
+				
+				PinState p;
+				
+				if(sekvens[a][b] == 0) p = PinState.LOW;
+				else if(sekvens[a][b] == 1) p = PinState.HIGH;
+				else {
+					p = null;
+					System.exit(1);
+				}
+				
+				pins[b].setState(p);
+				
+			}
+			try{
+				Thread.sleep(1);
+			}catch(InterruptedException ex){
+				
+			}
+			
+		}
+	}
+}

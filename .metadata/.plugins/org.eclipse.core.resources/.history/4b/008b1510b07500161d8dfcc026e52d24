@@ -1,0 +1,57 @@
+import com.pi4j.io.gpio.GpioController;
+import com.pi4j.io.gpio.GpioFactory;
+import com.pi4j.io.gpio.GpioPinDigitalOutput;
+import com.pi4j.io.gpio.PinState;
+import com.pi4j.io.gpio.RaspiPin;
+
+public class MotorKontroller {
+	
+
+	private GpioController controller = GpioFactory.getInstance();
+	private GpioPinDigitalOutput[] pins = {
+			
+			controller.provisionDigitalOutputPin(RaspiPin.GPIO_00, "0", PinState.LOW),
+			controller.provisionDigitalOutputPin(RaspiPin.GPIO_02, "1", PinState.LOW),
+			
+	};
+
+	
+	
+	public static void main(String[] args) {
+		new MotorKontroller();
+	}
+	
+	public MotorKontroller() {
+//		
+//		Deklarera output pins
+//
+//		Deklarera arrayen
+//
+//		Deklarera en loop som genomför "switching" sekvensen
+//
+//			Deklarera en loop som loopar igenom pinsen
+//				
+//				uppdaterar varje pin till det "korrekta värdet"
+//				
+//			Sleepa tråden så att den inte börjar switcha helt okontrollerbart.
+//
+//
+		
+		for(int i = 0; i < 64; i++){
+			sekvens();
+		}
+		
+	}
+	
+	public void sekvens(){
+		
+		while(true){
+			
+			
+			
+			
+			
+		}
+		
+	}
+}
